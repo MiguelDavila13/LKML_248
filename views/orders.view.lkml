@@ -1,6 +1,31 @@
 view: orders {
   sql_table_name: thelook.orders ;;
+  #sql_table_name:
+  #% if selection._parameter_value == "orders" %}
+  #  thelook.orders
+  #{% elsif selection._parameter_value == "items" %}
+  #  thelook.order_items
+  #{% else %}
+  #  thelook.users
+  #{% endif %} ;;
+
   drill_fields: [id]
+
+  parameter: selection {
+    type: unquoted
+    allowed_value: {
+      label: "Orders"
+      value: "orders"
+    }
+    allowed_value: {
+      label: "Items"
+      value: "items"
+    }
+    allowed_value: {
+      label: "Users"
+      value: "users"
+    }
+  }
 
   dimension: id {
     primary_key: yes
