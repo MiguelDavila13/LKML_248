@@ -1,3 +1,4 @@
+include: "tests.lkml"
 view: users {
   sql_table_name: thelook.users ;;
   drill_fields: [id]
