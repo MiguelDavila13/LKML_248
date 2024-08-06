@@ -20,7 +20,7 @@ explore: inventory_items {
 }
 
 explore: order_items {
-  always_filter: {filters: [users.first_name: "in_good_standing, locked_vacation_mode, requires_email_verification"] }
+  #always_filter: {filters: [users.first_name: "in_good_standing, locked_vacation_mode, requires_email_verification"] }
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
