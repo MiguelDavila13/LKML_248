@@ -62,8 +62,19 @@ view: users {
     type: string
     sql: ${TABLE}.traffic_source ;;
   }
+
+  dimension: testLocation {
+    type: location
+    sql_latitude: 50  ;;
+    sql_longitude: ${TABLE}.age  ;;
+  }
+
+  measure: total_age {
+    type: sum
+    sql: ${age} ;;  }
+
   measure: count {
     type: count
-    drill_fields: [id, first_name, last_name, orders.count]
+    drill_fields: [id, age, first_name, last_name, orders.count]
   }
 }

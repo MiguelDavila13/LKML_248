@@ -39,4 +39,13 @@ view: products {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
   }
+
+  measure: percent_of_total_advanced_movements {
+    label: "Percent of total advanced movements"
+    group_label: "Percentage"
+    type: percent_of_total
+    value_format: "0.0\%"
+    sql: ${retail_price};;
+  }
+
 }
