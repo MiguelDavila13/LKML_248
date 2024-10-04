@@ -5,3 +5,4 @@ include: "/views/**/*.view.lkml"                # include all views in the views
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
 explore: users {}
+# test
